@@ -18,14 +18,14 @@ void quick_sort(int *array, size_t size)
 /**
  * partition - partition
  * @array: array
- * @low: lower
+ * @lo: lower
  * @hi: higher
  * @size: array's size
  * Return: i
  */
-int partition(int *array, int low, int hi, size_t size)
+int partition(int *array, int lo, int hi, size_t size)
 {
-	int i = low - 1, j = low;
+	int i = lo - 1, j = lo;
 	int pivot = array[hi], aux = 0;
 
 	for (; j < hi; j++)
@@ -55,19 +55,19 @@ int partition(int *array, int low, int hi, size_t size)
 /**
  * quick_s - quick sort
  * @array: given array
- * @low: lower
+ * @lo: lower
  * @hi:higher
  * @size: array's size
  * Return: void
  */
-void quick_s(int *array, int low, int hi, size_t size)
+void quick_s(int *array, int lo, int hi, size_t size)
 {
 	int pivot;
 
-	if (low < hi)
+	if (lo < hi)
 	{
-		pivot = partition(array, low, hi, size);
-		quick_s(array, low, pivot - 1, size);
+		pivot = partition(array, lo, hi, size);
+		quick_s(array, lo, pivot - 1, size);
 		quick_s(array, pivot + 1, hi, size);
 	}
 }
